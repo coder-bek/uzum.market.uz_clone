@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { GoChevronDown, GoChevronUp } from 'react-icons/go'
 import NavigatorDropdown from './navigatorDrobdown'
+import { toast } from 'sonner'
 
 const Navigator = () => {
     const [location, setLocation] = useState(false)
@@ -18,6 +19,7 @@ const Navigator = () => {
         localStorage.setItem("selectedCity", city)
         setSelectedCity(city)
         setLocation(false)
+        toast.success(`${city} shahri tanlandi`)
     };
 
     return (

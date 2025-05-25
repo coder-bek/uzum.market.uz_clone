@@ -5,25 +5,16 @@ import { nanoid } from "nanoid";
 
 const NavigatorDropdown = ({ onClose, onSelectCity }) => {
     const { geoLocation } = data;
-
     const [filteredCities, setFilteredCities] = useState(geoLocation);
-    // const [selectedCity, setSelectedCity] = useState(() => {
-    //     return localStorage.getItem("selectedCity") || "Toshkent";
-    // });
-
     const searchInputRef = useRef(null);
-
     const handleSearch = () => {
         const query = searchInputRef.current.value.toLowerCase();
 
         const results = geoLocation.filter(city =>
             city.toLowerCase().includes(query)
         );
-
         setFilteredCities(results);
     };
-
-
 
     const handleCityClick = (city) => {
         onSelectCity(city);
@@ -33,14 +24,12 @@ const NavigatorDropdown = ({ onClose, onSelectCity }) => {
 
     return (
         <>
-            {/* Overlay */}
             <div
                 onClick={onClose}
-                className="fixed inset-0 bg-[#00000090] bg-opacity-50 backdrop-blur-sm z-40"
+                className="fixed inset-0 bg-[#00090] bg-opacity-50 backdrop-blur-sm z-40"
             />
 
-            {/* Dropdown Panel */}
-            <div className="fixed top-[10%] left-1/2 -translate-x-1/2 bg-[#EDEFF2] w-1/2 h-[82.5%] overflow-y-scroll rounded-lg px-10 z-50 shadow-lg">
+            <div className="fixed top-[10%] left-1/2 -translate-x-1/2 bg-[#EDEFF2] w-1/2 h-[82%] overflow-y-scroll rounded-lg px-10 z-50 shadow-lg">
                 <div className="sticky top-0 bg-[#EDEFF2] z-50 py-8">
                     <div className='flex items-center justify-between mb-5'>
                         <h1 className="font-medium text-3xl">Shaharni tanlang</h1>
@@ -59,13 +48,13 @@ const NavigatorDropdown = ({ onClose, onSelectCity }) => {
                         className="sticky w-full bg-[#b2b2b277] outline-none text-xl p-2.5 rounded-lg"
                     />
                 </div>
-                <div className="space-y-2 pb-10">
+                <div className="-mb-2.5">
                     {filteredCities.length > 0 ? (
                         filteredCities.map(city => (
                             <p
                                 key={nanoid()}
                                 onClick={() => handleCityClick(city)}
-                                className="cursor-pointer hover:text-blue-600 transition"
+                                className="cursor-pointer border-t text-[17px] flex items-center px-2.5 rounded h-[40px] hover:bg-gray-300 transition"
                             >
                                 {city}
                             </p>
