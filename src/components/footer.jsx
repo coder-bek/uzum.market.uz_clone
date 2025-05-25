@@ -4,7 +4,7 @@ import { BsInstagram } from 'react-icons/bs'
 import { FaSquareYoutube } from 'react-icons/fa6'
 
 const Footer = () => {
-    return <div className='max-w-[1250px] mx-auto flex justify-between border-t-1 border-gray-400 mb-12'>
+    return <div className='max-w-[1250px] mx-auto flex justify-between border-t-1 border-gray-400 mt-5 mb-12'>
         <div className='flex flex-col mt-5'>
             <p className='font-medium text-[15px]'>Biz haqimizda</p>
             <a
