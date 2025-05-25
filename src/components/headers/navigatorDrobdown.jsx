@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import data from "../../data";
 import { nanoid } from "nanoid";
+import { FaChevronRight } from 'react-icons/fa';
 
 const NavigatorDropdown = ({ onClose, onSelectCity }) => {
     const { geoLocation } = data;
@@ -26,7 +27,7 @@ const NavigatorDropdown = ({ onClose, onSelectCity }) => {
         <>
             <div
                 onClick={onClose}
-                className="fixed inset-0 bg-[#00090] bg-opacity-50 backdrop-blur-sm z-40"
+                className="fixed inset-0 bg-[#00000070] bg-opacity-10 backdrop-blur-[2px] z-40"
             />
 
             <div className="fixed top-[10%] left-1/2 -translate-x-1/2 bg-[#EDEFF2] w-1/2 h-[82%] overflow-y-scroll rounded-lg px-10 z-50 shadow-lg">
@@ -54,9 +55,9 @@ const NavigatorDropdown = ({ onClose, onSelectCity }) => {
                             <p
                                 key={nanoid()}
                                 onClick={() => handleCityClick(city)}
-                                className="cursor-pointer border-t text-[17px] flex items-center px-2.5 rounded h-[40px] hover:bg-gray-300 transition"
+                                className="cursor-pointer border-t text-[17px] flex items-center justify-between px-2.5 h-[40px] hover:bg-gray-300 transition"
                             >
-                                {city}
+                                {city} <FaChevronRight />
                             </p>
                         ))
                     ) : (

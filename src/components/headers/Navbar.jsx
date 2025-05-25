@@ -1,6 +1,8 @@
 import React from 'react'
 import Navigator from './navigator'
 import NavbarDrobdown from './navbarDrobdown'
+import NavbarSectionTwo from './NavbarSectionTwo'
+import Cataloginput from './catalog&input'
 
 const Navbar = () => {
     return (
@@ -20,8 +22,9 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
-            <nav>
-
+            <nav className='max-w-[1250px] mx-auto mt-5 flex items-center justify-between'>
+                <NavbarSectionTwo />
+                <Cataloginput />
             </nav>
         </header>
     )
