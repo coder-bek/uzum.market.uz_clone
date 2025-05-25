@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import "./navigator.css"
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { GoChevronDown, GoChevronUp } from 'react-icons/go'
 

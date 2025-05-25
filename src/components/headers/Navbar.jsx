@@ -1,6 +1,5 @@
 import React from 'react'
 import Navigator from './navigator/navigator'
-import "./Navbar.css"
 import NavbarDrobdown from './drobdown/navbarDrobdown'
 
 const Navbar = () => {
