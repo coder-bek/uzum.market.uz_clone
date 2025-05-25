@@ -1,7 +1,8 @@
 import React from 'react'
-import { FaApple, FaFacebookSquare, FaGooglePlay, FaTelegram } from 'react-icons/fa'
+import { FaApple, FaFacebookF, FaFacebookSquare, FaGooglePlay, FaInstagram, FaTelegram, FaYoutube } from 'react-icons/fa'
 import { BsInstagram } from 'react-icons/bs'
 import { FaSquareYoutube } from 'react-icons/fa6'
+import { BiLogoTelegram } from 'react-icons/bi'
 
 const Footer = () => {
     return <div className='max-w-[1250px] mx-auto flex justify-between border-t-1 border-gray-400 mt-5 mb-12'>
@@ -57,25 +58,52 @@ const Footer = () => {
                         className='flex items-center gap-0.5'
                         href="#"><FaApple size={30} /> AppStore</a>
                     <a
-                        className='flex items-center gap-0.5'
-                        href="#"><FaGooglePlay size={23} /> Google Play</a>
+                        className='flex items-center gap-0.5 '
+                        href="#">
+                        <img
+                            src="https://png.pngtree.com/png-vector/20230817/ourmid/pngtree-google-play-download-icon-vector-png-image_9183313.png"
+                            alt=""
+                            className='w-7'
+                        />
+                        Google Play
+                    </a>
                 </div>
             </div>
             <div className='mt-5'>
                 <p className='font-medium text-[15px]'>Uzum ijtimoiy tarmoqlarda</p>
                 <div className='flex gap-2.5 mt-1.5'>
                     <a
-                        className='bg-gray-300 p-1 rounded'
-                        href="#"><BsInstagram size={35} /></a>
+                        className='bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600  p-1 rounded'
+                        href="#">
+                        <FaInstagram
+                            size={35}
+                            className='text-white'
+                        />
+                    </a>
                     <a
-                        className='bg-gray-300 p-1 rounded'
-                        href="#"><FaTelegram size={35} /></a>
+                        className='bg-blue-500 p-1 rounded'
+                        href="#">
+                        <BiLogoTelegram
+                            size={35}
+                            className='text-white'
+                        />
+                    </a>
                     <a
-                        className='bg-gray-300 p-1 rounded'
-                        href="#"><FaFacebookSquare size={35} /></a>
+                        className='bg-blue-700 p-1 rounded'
+                        href="#">
+                        <FaFacebookF
+                            size={35}
+                            className='text-white'
+                        />
+                    </a>
                     <a
-                        className='bg-gray-300 p-1 rounded'
-                        href="#"><FaSquareYoutube size={35} /></a>
+                        className='bg-red-600 p-1 rounded'
+                        href="#">
+                        <FaYoutube
+                            size={35}
+                            className='text-white'
+                        />
+                    </a>
                 </div>
             </div>
         </div>

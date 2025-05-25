@@ -2,7 +2,7 @@ import React from 'react'
 
 const Main = () => {
   return (
-    <div>Main</div>
+    <div className='max-w-[1250px] mx-auto mt-5'></div>
   )
 }
 

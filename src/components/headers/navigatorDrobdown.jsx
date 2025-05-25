@@ -1,0 +1,82 @@
+import React, { useState, useRef } from 'react';
+import { IoMdClose } from 'react-icons/io';
+import data from "../../data";
+import { nanoid } from "nanoid";
+
+const NavigatorDropdown = ({ onClose, onSelectCity }) => {
+    const { geoLocation } = data;
+
+    const [filteredCities, setFilteredCities] = useState(geoLocation);
+    // const [selectedCity, setSelectedCity] = useState(() => {
+    //     return localStorage.getItem("selectedCity") || "Toshkent";
+    // });
+
+    const searchInputRef = useRef(null);
+
+    const handleSearch = () => {
+        const query = searchInputRef.current.value.toLowerCase();
+
+        const results = geoLocation.filter(city =>
+            city.toLowerCase().includes(query)
+        );
+
+        setFilteredCities(results);
+    };
+
+
+
+    const handleCityClick = (city) => {
+        onSelectCity(city);
+        localStorage.setItem("selectedCity", city);
+        onClose();
+    };
+
+    return (
+        <>
+            {/* Overlay */}
+            <div
+                onClick={onClose}
+                className="fixed inset-0 bg-[#00000090] bg-opacity-50 backdrop-blur-sm z-40"
+            />
+
+            {/* Dropdown Panel */}
+            <div className="fixed top-[10%] left-1/2 -translate-x-1/2 bg-[#EDEFF2] w-1/2 h-[82.5%] overflow-y-scroll rounded-lg px-10 z-50 shadow-lg">
+                <div className="sticky top-0 bg-[#EDEFF2] z-50 py-8">
+                    <div className='flex items-center justify-between mb-5'>
+                        <h1 className="font-medium text-3xl">Shaharni tanlang</h1>
+                        <span
+                            onClick={onClose}
+                            className="border-2 border-red-500 text-red-500 rounded-full cursor-pointer p-1 hover:bg-red-100 transition"
+                        >
+                            <IoMdClose size={25} />
+                        </span>
+                    </div>
+                    <input
+                        ref={searchInputRef}
+                        onChange={handleSearch}
+                        type="text"
+                        placeholder="Shaharni topish..."
+                        className="sticky w-full bg-[#b2b2b277] outline-none text-xl p-2.5 rounded-lg"
+                    />
+                </div>
+                <div className="space-y-2 pb-10">
+                    {filteredCities.length > 0 ? (
+                        filteredCities.map(city => (
+                            <p
+                                key={nanoid()}
+                                onClick={() => handleCityClick(city)}
+                                className="cursor-pointer hover:text-blue-600 transition"
+                            >
+                                {city}
+                            </p>
+                        ))
+                    ) : (
+                        <p>Bu shaharda hozir yetkazib berish ishlamayapti</p>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default NavigatorDropdown;
