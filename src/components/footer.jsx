@@ -5,7 +5,7 @@ import { BsInstagram } from 'react-icons/bs'
 import { FaSquareYoutube } from 'react-icons/fa6'
 
 const Footer = () => {
-    return <div className='border-top flex_item-center_justify-beetwen mb'>
+    return <div className='container border-top flex_item-center_justify-beetwen mb'>
         <div className='mt'>
             <p className='footer-text1'>Biz haqimizda</p>
             <a href="#">Topshirish punktlari</a>

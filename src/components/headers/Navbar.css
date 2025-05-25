@@ -1,0 +1,12 @@
+.flex3 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bg-color {
+  background-color: rgb(240, 242, 245);
+  padding: 7px 10px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
