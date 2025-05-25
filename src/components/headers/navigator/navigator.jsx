@@ -5,7 +5,7 @@ import { GoChevronDown, GoChevronUp } from 'react-icons/go'
 
 const Navigator = () => {
     const [location, setLocation] = useState(false)
-
+    
     return (
         <button
             onClick={() => setLocation(!location)}

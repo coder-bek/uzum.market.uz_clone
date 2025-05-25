@@ -16,3 +16,7 @@ body {
   max-width: 1250px;
   margin: 0 auto;
 }
+
+ul li{
+  list-style: none;
+}
