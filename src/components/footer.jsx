@@ -1,7 +1,5 @@
 import React from 'react'
-import { FaApple, FaFacebookF, FaFacebookSquare, FaGooglePlay, FaInstagram, FaTelegram, FaYoutube } from 'react-icons/fa'
-import { BsInstagram } from 'react-icons/bs'
-import { FaSquareYoutube } from 'react-icons/fa6'
+import { FaApple, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { BiLogoTelegram } from 'react-icons/bi'
 
 const Footer = () => {

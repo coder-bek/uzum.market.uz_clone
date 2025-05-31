@@ -7,7 +7,7 @@ const NavbarDrobdown = () => {
 
     const languages = {
         uz: {
-            title: "UZ",
+            title: "UZB",
             img: "../../../public/languageUz.png"
         },
         ru: {
@@ -23,7 +23,7 @@ const NavbarDrobdown = () => {
     const handleLanguageChange = (key) => {
         setLanguage(key)
         setDrobdown(false)
-        toast.success(`${languages[key].title} tanlandi ✅`)
+        toast.success(`${languages[key].title}-tili tanlandi`)
     }
 
     return (
